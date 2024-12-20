@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import POM.SelniumFramework.pageobjects.LandingPage;
 import dev.failsafe.internal.util.Assert;
 
-public class StandAloneTest {
+public class SubmitOrderTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -22,11 +22,13 @@ public class StandAloneTest {
 		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		driver.get("https://rahulshettyacademy.com/client");
+		//driver.get("https://rahulshettyacademy.com/client");
 		LandingPage landingpage = new LandingPage(driver);
-		driver.findElement(By.xpath("//input[@id='userEmail']")).sendKeys("uniquesumanth143@gmail.com");
-		driver.findElement(By.xpath("//input[@id='userPassword']")).sendKeys("Suman@123");
-		driver.findElement(By.xpath("//input[@id='login']")).click();
+		landingpage.goTo();
+		landingpage.LoginApplication("uniquesumanth143@gmail.com", "Suman@123");
+//		driver.findElement(By.xpath("//input[@id='userEmail']")).sendKeys("uniquesumanth143@gmail.com");
+//		driver.findElement(By.xpath("//input[@id='userPassword']")).sendKeys("Suman@123");
+//		driver.findElement(By.xpath("//input[@id='login']")).click();
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".mb-3")));
 		List<WebElement> products = driver.findElements(By.cssSelector(".mb-3"));

@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import POM.SelniumFramework.pageobjects.LandingPage;
+import POM.SelniumFramework.pageobjects.ProductCatalogue;
 import dev.failsafe.internal.util.Assert;
 
 public class SubmitOrderTest {
@@ -22,6 +23,7 @@ public class SubmitOrderTest {
 		
 		WebDriver driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
 		//driver.get("https://rahulshettyacademy.com/client");
 		LandingPage landingpage = new LandingPage(driver);
 		landingpage.goTo();
@@ -29,19 +31,25 @@ public class SubmitOrderTest {
 //		driver.findElement(By.xpath("//input[@id='userEmail']")).sendKeys("uniquesumanth143@gmail.com");
 //		driver.findElement(By.xpath("//input[@id='userPassword']")).sendKeys("Suman@123");
 //		driver.findElement(By.xpath("//input[@id='login']")).click();
+		ProductCatalogue productCatalogue  = new ProductCatalogue(driver);
+		productCatalogue.getProductsList();
+		productCatalogue.AddproducttoCart(productName);
+		
+		
+		
 		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".mb-3")));
-		List<WebElement> products = driver.findElements(By.cssSelector(".mb-3"));
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".mb-3")));
+//		List<WebElement> products = driver.findElements(By.cssSelector(".mb-3"));
+//		
+//		WebElement prod = products.stream().filter(product-> 
+//		product.findElement(By.cssSelector("b")).getText().equals(productName)).findFirst().orElse(null);
+//				
+//		prod.findElement(By.cssSelector(".card-body button:last-of-type")).click();
 		
-		WebElement prod = products.stream().filter(product-> 
-		product.findElement(By.cssSelector("b")).getText().equals(productName)).findFirst().orElse(null);
-				
-		prod.findElement(By.cssSelector(".card-body button:last-of-type")).click();
 		
-		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#toast-container")));
-		
-		wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("#toast-container")));
+//		
+//		wait.until(ExpectedConditions.invisibilityOf(driver.findElement(By.cssSelector(".ng-animating"))));
 		driver.findElement(By.xpath("//button[@routerlink='/dashboard/cart']")).click();
 		
 		List<WebElement> cartproducts = driver.findElements(By.xpath("//h3[normalize-space()='ZARA COAT 3']"));

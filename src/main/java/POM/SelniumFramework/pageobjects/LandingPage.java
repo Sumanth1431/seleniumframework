@@ -10,41 +10,36 @@ import POM.SelniumFramework.pageobjects.AbstractComponents.AbstractComponents;
 
 public class LandingPage extends AbstractComponents {
 
-	
 	WebDriver driver;
+
 	public LandingPage(WebDriver driver) {
 		super(driver);
-		this.driver=driver;
-		
+		this.driver = driver;
+
 		PageFactory.initElements(driver, this);
 	}
-	
-	//WebElement userEmail = driver.findElement(By.xpath("//input[@id='userEmail']")); 
-	
-	@FindBy(xpath="//input[@id='userEmail']")
+
+	@FindBy(xpath = "//input[@id='userEmail']")
 	WebElement userEmail;
-	
-	@FindBy(xpath="//input[@id='userPassword']")
+
+	@FindBy(xpath = "//input[@id='userPassword']")
 	WebElement password;
-	
-	@FindBy(xpath="//input[@id='login']")
+
+	@FindBy(xpath = "//input[@id='login']")
 	WebElement submit;
-	
-	
-	public void LoginApplication(String email, String pwd) {
-		
+
+	public ProductCatalogue LoginApplication(String email, String pwd) {
+
 		userEmail.sendKeys(email);
 		password.sendKeys(pwd);
 		submit.click();
+		ProductCatalogue productCatalogue = new ProductCatalogue(driver);
+		return productCatalogue;
 	}
 
 	public void goTo() {
 		driver.get("https://rahulshettyacademy.com/client");
-		
+
 	}
 
-	
-	
 }
-
-

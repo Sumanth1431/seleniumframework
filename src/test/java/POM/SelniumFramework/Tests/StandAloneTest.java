@@ -1,4 +1,4 @@
-package POM.SelniumFramework;
+package POM.SelniumFramework.Tests;
 
 import static org.testng.AssertJUnit.assertTrue;
 import java.time.Duration;
@@ -11,12 +11,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Test;
 
 import POM.SelniumFramework.pageobjects.LandingPage;
 import dev.failsafe.internal.util.Assert;
 
 public class StandAloneTest {
-
+@Test
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String productName = "ZARA COAT 3";

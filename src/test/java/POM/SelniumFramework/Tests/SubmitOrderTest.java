@@ -1,6 +1,8 @@
-package POM.SelniumFramework;
+package POM.SelniumFramework.Tests;
 
 import static org.testng.AssertJUnit.assertTrue;
+
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
@@ -11,7 +13,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+import org.testng.annotations.Test;
+import POM.SelniumFramework.pageobjects.OrdersPage;
+import POM.SelniumFramework.TestComponents.BaseTest;
 import POM.SelniumFramework.pageobjects.CartPage;
 import POM.SelniumFramework.pageobjects.CheckoutPage;
 import POM.SelniumFramework.pageobjects.ConfirmationPage;
@@ -19,18 +23,23 @@ import POM.SelniumFramework.pageobjects.LandingPage;
 import POM.SelniumFramework.pageobjects.ProductCatalogue;
 import dev.failsafe.internal.util.Assert;
 
-public class SubmitOrderTest {
+public class SubmitOrderTest extends BaseTest{
+	
+	String productName = "ZARA COAT 3";
 
-	public static void main(String[] args) {
+	@Test
+	
+	public void submitorder( ) throws IOException{
 		// TODO Auto-generated method stub
-		String productName = "ZARA COAT 3";
-
-		WebDriver driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-//		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
+	
+		
+//		WebDriver driver = new ChromeDriver();
+//		driver.manage().window().maximize();
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+////		WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(60));
 		// driver.get("https://rahulshettyacademy.com/client");
-		LandingPage landingpage = new LandingPage(driver);
-		landingpage.goTo();
+//		LandingPage landingpage = launchapplication();
+//		landingpage.goTo();
 //		landingpage.LoginApplication("uniquesumanth143@gmail.com", "Suman@123");
 //		driver.findElement(By.xpath("//input[@id='userEmail']")).sendKeys("uniquesumanth143@gmail.com");
 //		driver.findElement(By.xpath("//input[@id='userPassword']")).sendKeys("Suman@123");
@@ -77,8 +86,19 @@ public class SubmitOrderTest {
 
 		assertTrue(confirmmessage.equalsIgnoreCase("Thankyou for the order."));
 
-		driver.close();
+		//driver.close();
 //
 	}
 
+	
+	@Test(dependsOnMethods= {"submitorder"}) 
+	
+	public void orderhistorytest() {
+		
+		
+		ProductCatalogue productCatalogue = landingpage.LoginApplication("uniquesumanth143@gmail.com", "Suman@123");
+		OrdersPage orderspage = productCatalogue.gotorderpage();
+		assertTrue(orderspage.verifyproductdisplay(productName));
+		
+	}
 }

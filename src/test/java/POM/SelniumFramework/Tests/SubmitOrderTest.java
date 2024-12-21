@@ -13,6 +13,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import POM.SelniumFramework.pageobjects.OrdersPage;
 import POM.SelniumFramework.TestComponents.BaseTest;
@@ -100,5 +101,10 @@ public class SubmitOrderTest extends BaseTest{
 		OrdersPage orderspage = productCatalogue.gotorderpage();
 		assertTrue(orderspage.verifyproductdisplay(productName));
 		
+	}
+	
+	@DataProvider
+	public Object[][] getdata() {
+		return new Object [] [] {{"uniquesumanth143@gmail.com","Suman@123","ZARA COAT 3"},{"uniquesumanth143@gmail.com","Suman@123","ADIDAS ORIGINAL"}};
 	}
 }

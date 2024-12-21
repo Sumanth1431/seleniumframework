@@ -2,34 +2,34 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-12-21T13:35:28 IST" name="Default suite" finished-at="2024-12-21T13:35:40 IST" duration-ms="11404">
+  <suite started-at="2024-12-21T15:07:27 IST" name="Default suite" finished-at="2024-12-21T15:07:39 IST" duration-ms="12212">
     <groups>
     </groups>
-    <test started-at="2024-12-21T13:35:28 IST" name="Default test" finished-at="2024-12-21T13:35:40 IST" duration-ms="11404">
+    <test started-at="2024-12-21T15:07:27 IST" name="Default test" finished-at="2024-12-21T15:07:39 IST" duration-ms="12212">
       <class name="POM.SelniumFramework.Tests.ErrorValidations">
-        <test-method is-config="true" signature="launchapplication()[pri:0, instance:POM.SelniumFramework.Tests.ErrorValidations@74751b3]" started-at="2024-12-21T13:35:28 IST" name="launchapplication" finished-at="2024-12-21T13:35:31 IST" duration-ms="2617" status="PASS">
+        <test-method is-config="true" signature="launchapplication()[pri:0, instance:POM.SelniumFramework.Tests.ErrorValidations@74751b3]" started-at="2024-12-21T15:07:27 IST" name="launchapplication" finished-at="2024-12-21T15:07:31 IST" duration-ms="4199" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchapplication -->
-        <test-method signature="submitorder()[pri:0, instance:POM.SelniumFramework.Tests.ErrorValidations@74751b3]" started-at="2024-12-21T13:35:31 IST" name="submitorder" finished-at="2024-12-21T13:35:40 IST" duration-ms="8757" status="FAIL">
+        <test-method signature="submitorder()[pri:0, instance:POM.SelniumFramework.Tests.ErrorValidations@74751b3]" started-at="2024-12-21T15:07:31 IST" name="submitorder" finished-at="2024-12-21T15:07:39 IST" duration-ms="7985" status="FAIL">
           <exception class="org.openqa.selenium.remote.UnreachableBrowserException">
             <message>
               <![CDATA[Error communicating with the remote browser. It may have died.
 Build info: version: '4.27.0', revision: 'd6e718d'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [caa80b9686fe6a2aea913b305e457c35, findElement [using, value]]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.140, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\jshar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57864}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57864/devtoo..., se:cdpVersion: 131.0.6778.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: caa80b9686fe6a2aea913b305e457c35]]>
+Command: [116ee0a03efd1f09248b4f0f028089e3, findElement [using, value]]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.140, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\jshar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60435}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60435/devtoo..., se:cdpVersion: 131.0.6778.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 116ee0a03efd1f09248b4f0f028089e3]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.remote.UnreachableBrowserException: Error communicating with the remote browser. It may have died.
 Build info: version: '4.27.0', revision: 'd6e718d'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [caa80b9686fe6a2aea913b305e457c35, findElement [using, value]]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.140, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\jshar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57864}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57864/devtoo..., se:cdpVersion: 131.0.6778.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: caa80b9686fe6a2aea913b305e457c35
+Command: [116ee0a03efd1f09248b4f0f028089e3, findElement [using, value]]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.140, chrome: {chromedriverVersion: 131.0.6778.204 (52183f9e99a..., userDataDir: C:\Users\jshar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60435}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60435/devtoo..., se:cdpVersion: 131.0.6778.140, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 116ee0a03efd1f09248b4f0f028089e3
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:572)
 at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
 at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
